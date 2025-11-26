@@ -587,8 +587,8 @@ public class WatsonxChatModelTest {
             assertEquals(Set.of("a", "b"), parameters.getGuidedChoice());
             assertEquals("guidedGrammar", parameters.getGuidedGrammar());
             assertEquals("guidedRegex", parameters.getGuidedRegex());
-            assertEquals(1.1f, parameters.getRepetitionPenalty());
-            assertEquals(1.2f, parameters.getLengthPenalty());
+            assertEquals(1.1, parameters.getRepetitionPenalty());
+            assertEquals(1.2, parameters.getLengthPenalty());
         });
     }
 
@@ -660,8 +660,8 @@ public class WatsonxChatModelTest {
             assertEquals(Set.of("a", "b"), parameters.getGuidedChoice());
             assertEquals("guidedGrammar", parameters.getGuidedGrammar());
             assertEquals("guidedRegex", parameters.getGuidedRegex());
-            assertEquals(1.1f, parameters.getRepetitionPenalty());
-            assertEquals(1.2f, parameters.getLengthPenalty());
+            assertEquals(1.1, parameters.getRepetitionPenalty());
+            assertEquals(1.2, parameters.getLengthPenalty());
         });
 
         withChatServiceMock(() -> {
@@ -729,8 +729,8 @@ public class WatsonxChatModelTest {
             assertEquals(Set.of("a", "b"), parameters.getGuidedChoice());
             assertEquals("guidedGrammar", parameters.getGuidedGrammar());
             assertEquals("guidedRegex", parameters.getGuidedRegex());
-            assertEquals(1.1f, parameters.getRepetitionPenalty());
-            assertEquals(1.2f, parameters.getLengthPenalty());
+            assertEquals(1.1, parameters.getRepetitionPenalty());
+            assertEquals(1.2, parameters.getLengthPenalty());
         });
 
         withChatServiceMock(() -> {
@@ -892,8 +892,8 @@ public class WatsonxChatModelTest {
             assertEquals(Set.of("value1", "value2"), parameters.getGuidedChoice());
             assertEquals("guidedGrammar", parameters.getGuidedGrammar());
             assertEquals("guidedRegex", parameters.getGuidedRegex());
-            assertEquals(1.1f, parameters.getRepetitionPenalty());
-            assertEquals(1.2f, parameters.getLengthPenalty());
+            assertEquals(1.1, parameters.getRepetitionPenalty());
+            assertEquals(1.2, parameters.getLengthPenalty());
             // ----------------
         });
     }

@@ -312,8 +312,8 @@ public class ConverterTest {
         assertEquals(Set.of("a", "b"), p.getGuidedChoice());
         assertEquals("guidedGrammar", p.getGuidedGrammar());
         assertEquals("guidedRegex", p.getGuidedRegex());
-        assertEquals(1.1f, p.getLengthPenalty());
-        assertEquals(1.2f, p.getRepetitionPenalty());
+        assertEquals(1.1, p.getLengthPenalty());
+        assertEquals(1.2, p.getRepetitionPenalty());
         assertNull(p.getResponseFormat());
     }
 

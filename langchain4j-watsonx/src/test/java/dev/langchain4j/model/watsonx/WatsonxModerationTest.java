@@ -95,7 +95,7 @@ public class WatsonxModerationTest {
         response.setText("input");
         response.setEnd(5);
         response.setStart(0);
-        response.setScore(0.3f);
+        response.setScore(0.3);
 
         when(mockDetectionService.detect(detectionTextRequest.capture()))
                 .thenReturn(new DetectionResponse<>(List.of(response)));
@@ -120,7 +120,7 @@ public class WatsonxModerationTest {
             assertEquals("Pii", metadata.get("detection_type"));
             assertEquals(5, metadata.get("end"));
             assertEquals(0, metadata.get("start"));
-            assertEquals(0.3f, metadata.get("score"));
+            assertEquals(0.3, metadata.get("score"));
 
             assertEquals("input", detectionTextRequest.getValue().getInput());
             assertEquals(2, detectionTextRequest.getValue().getDetectors().size());
@@ -136,7 +136,7 @@ public class WatsonxModerationTest {
         response_1.setText("input");
         response_1.setEnd(5);
         response_1.setStart(0);
-        response_1.setScore(0.3f);
+        response_1.setScore(0.3);
 
         var response_2 = new DetectionTextResponse();
         response_2.setDetection("xxx");
@@ -144,7 +144,7 @@ public class WatsonxModerationTest {
         response_2.setText("input1");
         response_2.setEnd(5);
         response_2.setStart(0);
-        response_2.setScore(0.3f);
+        response_2.setScore(0.3);
 
         when(mockDetectionService.detect(detectionTextRequest.capture()))
                 .thenAnswer(invocation -> new DetectionResponse<>(List.of()))
@@ -181,7 +181,7 @@ public class WatsonxModerationTest {
             assertEquals("Pii", metadata.get("detection_type"));
             assertEquals(5, metadata.get("end"));
             assertEquals(0, metadata.get("start"));
-            assertEquals(0.3f, metadata.get("score"));
+            assertEquals(0.3, metadata.get("score"));
 
             calls = detectionTextRequest.getValue().getDetectors().size();
             assertTrue(calls == 1 || calls == 2);
