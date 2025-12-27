@@ -456,11 +456,11 @@ public class WatsonxStreamingChatModelTest {
 
         doAnswer(invocation -> {
                     ChatHandler handler = invocation.getArgument(1);
-                    handler.onPartialToolCall(
-                            new com.ibm.watsonx.ai.chat.model.PartialToolCall("completion-id", 0, null, "name", "{"));
-                    handler.onPartialToolCall(
-                            new com.ibm.watsonx.ai.chat.model.PartialToolCall("completion-id", 0, "id", "name", "}"));
-                    handler.onCompleteToolCall(new CompletedToolCall("completion-id", toolCall));
+                    handler.onPartialToolCall(new com.ibm.watsonx.ai.chat.model.PartialToolCall(
+                            "completion-id", 0, 0, null, "name", "{"));
+                    handler.onPartialToolCall(new com.ibm.watsonx.ai.chat.model.PartialToolCall(
+                            "completion-id", 0, 0, "id", "name", "}"));
+                    handler.onCompleteToolCall(new CompletedToolCall("completion-id", 0, toolCall));
                     handler.onCompleteResponse(chatResponse.build());
                     return CompletableFuture.completedFuture(null);
                 })
