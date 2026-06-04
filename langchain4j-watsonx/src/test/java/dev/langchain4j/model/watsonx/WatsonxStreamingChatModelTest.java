@@ -323,7 +323,7 @@ public class WatsonxStreamingChatModelTest {
                     return CompletableFuture.completedFuture(null);
                 })
                 .when(deploymentService)
-                .chatStreaming(chatRequestCaptor.capture(), any());
+                .chatStreaming(chatRequestCaptor.capture(), any(ChatHandler.class));
 
         withDeploymentServiceMock(() -> {
             var streamingChatModel = WatsonxStreamingChatModel.builder()
